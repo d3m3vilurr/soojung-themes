@@ -1,6 +1,32 @@
 {include file="header.tpl"}
 <div id="entries">
-    <div id="bar">
+    <div class="bar">
+        <span class="classes">
+        <b>
+	    {if $view == "index"}
+		    All Entries
+            {php}$entry_count = Entry::getEntryCount();{/php}
+    	{elseif $view == "archive"}
+	    	Archive
+            {php}$entry_count = 0;{/php}
+    	{elseif $view == "category"}
+	    	Category
+            {php}
+                $category = new Category($_GET['category']);
+                $entry_count = $category->getEntryCount();
+            {/php}
+    	{elseif $view == "search"}
+	    	Search
+            {php}$entry_count = 0;{/php}
+    	{/if}
+        </b>
+        </span>
+        {foreach from=$entries item=entry}
+            {if $view == "archive" || $view == "search"} 
+                {php}$entry_count++;{/php}
+            {/if}
+            {php}$count++;{/php}
+        {/foreach}
         <span class="result">
             Results <b>
             {php}
@@ -24,32 +50,6 @@
             {/php}
             </b> seconds)
         </span>
-
-        <h3>
-	    {if $view == "index"}
-		    All Entries
-            {php}$entry_count = Entry::getEntryCount();{/php}
-    	{elseif $view == "archive"}
-	    	Archive
-            {php}$entry_count = 0;{/php}
-    	{elseif $view == "category"}
-	    	Category
-            {php}
-                $category = new Category($_GET['category']);
-                $entry_count = $category->getEntryCount();
-            {/php}
-    	{elseif $view == "search"}
-	    	Search
-            {php}$entry_count = 0;{/php}
-    	{/if}
-        </h3>
-
-        {foreach from=$entries item=entry}
-            {if $view == "archive" || $view == "search"} 
-                {php}$entry_count++;{/php}
-            {/if}
-            {php}$count++;{/php}
-        {/foreach}
     </div>
 
     {foreach from=$entries item=entry}
@@ -67,60 +67,61 @@
         </div>
     </div>
     {/foreach}
-
     {if $view == "index"}
-    <div id="nav">
-    <table>
+    <div class='nav'>
+    <table style="margin:0 auto; text-align=center;">
         <tr>
-            <td class="nav-prev">
+            <td>
+                Result Page:             
+            </td>
+            <td>
                 {if $prev_page_link != ""}
-              	<a href="{$prev_page_link|escape}">
+              	<a href="{$prev_page_link|escape}" class='q'>
                 {/if}
-                <img src="{$baseurl}/templates/{$skin}/imgs/nav_previous.gif" alt="" />{if $prev_page_link != ""}</a><br />
-                Result Page:&nbsp;&nbsp;&nbsp;&nbsp;
-              	<a href="{$prev_page_link|escape}"><strong>Previous</strong></a>&nbsp;
+                <span class='i'><img src="{$baseurl}/templates/{$skin}/imgs/nav_previous.gif" alt="" /></span><br />
+                {if $prev_page_link != ""}
+                <span class='b'>Previous</span>
+              	</a>                
                 {else}
-                <br />
-                Result Page:&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;
                 {/if}
             </td>
-            <td class="nav-general">
+            <td>
                 {if $prev_page_link != ""}
-              	<a href="{$prev_page_link|escape}"><img src="{$baseurl}/templates/{$skin}/imgs/nav_page.gif" alt="" /></a><br />
               	<a href="{$prev_page_link|escape}">
+                <img src="{$baseurl}/templates/{$skin}/imgs/nav_page.gif" alt="" /><br />
                 {php}
                 echo $i;
                 {/php}
                 </a>
                 {/if}
             </td>
-            <td class="nav-current">
-                <img src="{$baseurl}/templates/{$skin}/imgs/nav_current.gif" alt="current" /><br />
-                <span class="nav-current">
+            <td>
+                <img src="{$baseurl}/templates/{$skin}/imgs/nav_current.gif" alt="current" /><br /><span class='i'>
                 {php}
                 echo $i+1;
                 {/php}
                 </span>
             </td>
-            <td class="nav-general">
+            <td>
                 {if $next_page_link != ""}
               	<a href="{$next_page_link|escape}">
-                <img src="{$baseurl}/templates/{$skin}/imgs/nav_page.gif" alt="next" /></a><br />
-              	<a href="{$next_page_link|escape}">
+                <img src="{$baseurl}/templates/{$skin}/imgs/nav_page.gif" alt="next" /><br />
                 {php}
                 echo $i+2;
                 {/php}
                 </a>
                 {/if}
             </td>
-            <td class="nav-next">
+            <td>
                 {if $next_page_link != ""}
               	<a href="{$next_page_link|escape}">
                 {/if}
-                <img src="{$baseurl}/templates/{$skin}/imgs/nav_next.gif" alt="next_page" />{if $next_page_link != ""}</a><br />
-              	<a href="{$next_page_link|escape}"><strong>Next</strong></a>
+                <img src="{$baseurl}/templates/{$skin}/imgs/nav_next.gif" alt="next_page" /><br />
+                {if $next_page_link != ""}
+                <span class='b'>Next</span>
+                </a>
                 {else}
-                <br />
                 &nbsp;
                 {/if}
             </td>
