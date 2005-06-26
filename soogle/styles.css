@@ -34,12 +34,13 @@ pre {
     position: relative;
     height: 60px;
 }
-.logo {
+
+#Top_Logo {
     clear: both;
     position: absolute;
     float: left;
 }
-.topmenu {
+#Topmenu {
     clear: both;
     position: absolute;
     left: 170px;
@@ -49,21 +50,29 @@ pre {
     font-size: 8pt;
     line-height: 95%;
 }
-.blogtitle {
+
+#Topmenu .blogtitle {
     line-height: 100%;
     font-size: 11pt;
     font-weight: bold;
 }
-.menu {
+
+#Menu_List {
     font-size: 9pt;
 }
-.search {
+
+#Menu_List span {
+    margin-left: 10px;
+}
+
+#search {
     position: absolute;
     top: 20pt;
     left: 160px;
     width: -160px;          
 }
-.setting {
+
+#setting {
     position: absolute;
     left: 540px;
     top: 21pt;
@@ -71,7 +80,7 @@ pre {
 }
 
 /* First Bar */
-.bar {
+#Middle_Bar {
     background-color: #e5ecf9;
     color: #000000;
     height: 20px;
@@ -79,10 +88,12 @@ pre {
     padding-left: 10px;
     padding-right: 10px;
 }
-.classes {
+
+#view_name {
     position: absolute;
 }
-.result {
+
+#result {
     float: right;
 }
 
@@ -112,28 +123,31 @@ pre {
     text-align: right;
 }
 
-.nav {
+#nav {
     margin-top: 20px;
     line-height:80%;
 }
-.nav a{font-size:10pt; color:#000}
-.nav .i{font-size:10pt; font-weight:bold}
-.nav .b {
+#nav a{font-size:10pt; color:#000}
+#nav .i{font-size:10pt; font-weight:bold}
+#nav .b {
     font-size: 12pt;
     color:#00c;
     font-weight:bold;
 }
-.nav table {
+#nav table {
     border-spacing: 0;
     padding:0;
+    margin:0 auto;
+    text-align=center;
 }
-.nav tr {
+#nav tr {
     vertical-align: top;
 }
-.nav td {
+#nav td {
     vertical-align: bottom;
     text-align: center;
 }
+
 /* comment */
 .trackbacks, .comments {
     margin: 10px;
@@ -150,6 +164,10 @@ pre {
     margin-left: 10px;
 }
 .trackback a.fl, .comment a.fl {text-decoration:none;}
+
+.trackback_url span {
+    cursor: pointer;
+}
 
 .comment_body, .trackback_body {
     padding-left: 5px;
@@ -184,6 +202,8 @@ pre {
 #menu ul {
 	margin: 0px 5px 0px 5px;
 	padding: 0px 4px;
+    padding-left: 10px;
+    border-left: 1px #c9d7f1 solid;
 	list-style: none;
 }
 
@@ -195,13 +215,8 @@ pre {
 	overflow: hidden;
     border: 0px;
 }
-#menu .category, #menu .archive, #menu .calendar,
-#menu .static, #menu .recent_entry, #menu .recent_comment,
-#menu .recent_trackback, #menu .bookmark {
+#menu .list, #menu .calendar {
     position: absolute;
-    color:#999999;
-    background-color: #fffafa;
-    border: 1px #CCCCCC solid;
     left: 80%;
     top: 15%;
 }
@@ -216,12 +231,12 @@ pre {
     width: 130px;
 }
 /* footer */
-.footer {
+#footer {
     font-size: 9pt;
     text-align: center;
     margin-top: 10px;
 }
-.footerbox {
+#footerbox {
     padding: 20px;
     background-color: #e5ecf9;
     color: #000000;

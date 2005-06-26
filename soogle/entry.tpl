@@ -1,9 +1,9 @@
 {include file="header.tpl"}
-<div class="bar">
-    <span class="classes">
+<div id="Middle_Bar">
+    <span id="view_name">
         <b>{$entry->title|escape}</b>
     </span>
-    <span class="result">
+    <span id="result">
         Results <b>
         1</b> - <b>1
         </b> of about<b>
@@ -22,6 +22,7 @@
         </b> seconds)
     </span>
 </div>
+
 <div class="entry">
     <div class="entrybody">
         {$entry->getBody()}
@@ -39,7 +40,7 @@
     {if $entry->isSetOption("NO_TRACKBACK") == false}
     <div id="div_TB_{$entry->entryId}">
         <div class="trackbacks">
-            <div class="trackback_url">TrackBack URL: {$baseurl}/trackback.php?blogid={$entry->entryId}</div>
+            <div class="trackback_url">TrackBack URL: <span onclick="copy_clip(this.innerHTML);">{$baseurl}/trackback.php?blogid={$entry->entryId}</span></div>
             {if $entry->getTrackbackCount() != 0}
             <div id="trackback">
                 {foreach from=$trackbacks item=trackback}
