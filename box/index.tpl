@@ -92,7 +92,7 @@
     {elseif $view == "archive"}
 	<div class="graybox">
 		{foreach from=$entries item=entry}
-		<font style="font-size: 8pt;">{$entry->date|date_format:"%y/%m/%d"}</font>
+		<span style="font-size: 8pt;">{$entry->date|date_format:"%y/%m/%d"}</span>
     	&nbsp;<a href="{$entry->getHref()|escape}">{$entry->title|escape}</a>
 		<br />
 		{/foreach}
@@ -101,7 +101,7 @@
 	{elseif $view == "category"}
 	<div class="graybox">
 		{foreach from=$entries item=entry}
-		<font style="font-size: 8pt;">{$entry->date|date_format:"%y/%m/%d"}</font>
+		<span style="font-size: 8pt;">{$entry->date|date_format:"%y/%m/%d"}</span>
 		&nbsp;<a href="{$entry->getHref()|escape}">{$entry->title|escape}</a>
 		<br />
 		{/foreach}
@@ -110,7 +110,7 @@
 	{elseif $view == "search"}
 	<div class="graybox">
 		{foreach from=$entries item=entry}
-		<font style="font-size: 8pt;">{$entry->date|date_format:"%y/%m/%d"}</font>
+		<span style="font-size: 8pt;">{$entry->date|date_format:"%y/%m/%d"}</span>
 		&nbsp;<a href="{$entry->getHref()|escape}">{$entry->title|escape}</a>
 		<br />
     	{/foreach}
