@@ -91,11 +91,19 @@
 
     {elseif $view == "archive"}
 	<div class="graybox">
+		{if $keyword|strlen != 8}
 		{foreach from=$entries item=entry}
 		<span style="font-size: 8pt;">{$entry->date|date_format:"%y/%m/%d"}</span>
     	&nbsp;<a href="{$entry->getHref()|escape}">{$entry->title|escape}</a>
 		<br />
 		{/foreach}
+		{else}
+		{foreach from=$entries item=entry}
+		<span style="font-size: 8pt;">{$entry->date|date_format:"%H:%M"}</span>
+    	&nbsp;<a href="{$entry->getHref()|escape}">{$entry->title|escape}</a>
+		<br />
+		{/foreach}
+		{/if}
 	</div>
 				
 	{elseif $view == "category"}
