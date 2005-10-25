@@ -44,23 +44,27 @@
 
 <form action="" method="post">
 <input type="hidden" name="blogid" value="{$entry->entryId}" />
+<input type="hidden" name="name_name" value="{$name_name}" />
+<input type="hidden" name="email_name" value="{$email_name}" />
+<input type="hidden" name="url_name" value="{$url_name}" />
+<input type="hidden" name="body_name" value="{$body_name}" />
 <h3>Post a comment</h3>
 <table id="cmtform">
 <tr>
 	<th>Name:</th>
-	<td><input type="text" name="name" value="{$w_name|escape}" class="text" /></td>
+	<td><input type="text" name="{$name_name}" value="{$w_name|escape}" class="text" /></td>
 </tr>
 <tr>
 	<th>Email Address:</th>
-	<td><input type="text" name="email" value="{$w_email|escape}" class="text" /></td>
+	<td><input type="text" name="{$email_name}" value="{$w_email|escape}" class="text" /></td>
 </tr>
 <tr>
 	<th>URL:</th>
-	<td><input type="text" name="url" value="{$w_url|default:"http://"|escape}" class="text" /></td>
+	<td><input type="text" name="{$url_name}" value="{$w_url|default:"http://"|escape}" class="text" /></td>
 </tr>
 <tr>
 	<th>Comments:</th>
-	<td><textarea name="body" rows="5" cols="40"></textarea><br /><input type="submit" value="Post" /></td>
+	<td><textarea name="{$body_name}" rows="5" cols="40"></textarea><br /><input type="submit" value="Post" /></td>
 </tr>
 </table>
 </form>

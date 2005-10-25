@@ -21,14 +21,19 @@
 <form action="entry.php?blogid={$entry->entryId}" method="post">
 <p>Post a comment</p>
 <p>Name:<br />
-<input type="text" name="name" value="{$w_name|escape}" /></p>
+<input type="text" name="{$name_name}" value="{$w_name|escape}" /></p>
 <p>Email Address:<br />
-<input type="text" name="email" value="{$w_email|escape}" /></p>
+<input type="text" name="{$email_name}" value="{$w_email|escape}" /></p>
 <p>URL:<br />
-<input type="text" name="url" value="{$w_url|default:"http://"|escape}" /></p>
+<input type="text" name="{$url_name}" value="{$w_url|default:"http://"|escape}" /></p>
 <p>Comments:<br />
-<textarea name="body" rows="5" cols="40"></textarea>
-<input type="hidden" name="blogid" value="{$entry->entryId}" /></p>
+<textarea name="{$body_name}" rows="5" cols="40"></textarea>
+<input type="hidden" name="blogid" value="{$entry->entryId}" />
+<input type="hidden" name="name_name" value="{$name_name}" />
+<input type="hidden" name="email_name" value="{$email_name}" />
+<input type="hidden" name="url_name" value="{$url_name}" />
+<input type="hidden" name="body_name" value="{$body_name}" />
+</p>
 <p><input type="submit" value="Post" /></p>
 </form>
 {/if}

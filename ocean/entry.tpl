@@ -70,15 +70,19 @@
 		<form id="commentform" action="" method="post">
 			<div>
 				<input type="hidden" name="blogid" value="{$entry->entryId}" />
+				<input type="hidden" name="name_name" value="{$name_name}" />
+				<input type="hidden" name="email_name" value="{$email_name}" />
+				<input type="hidden" name="url_name" value="{$url_name}" />
+				<input type="hidden" name="body_name" value="{$body_name}" />
 			</div>
 			<div class="label">Author (<span class="red">*</span>):</div>
-			<div class="input"><input id="author" type="text" name="name" value="{$w_name|escape}" class="fixed" /></div>
+			<div class="input"><input id="author" type="text" name="{$name_name}" value="{$w_name|escape}" class="fixed" /></div>
 			<div class="label">E-mail:</div>
-			<div class="input"><input id="authorEmail" type="text" name="email" value="{$w_email|escape}" class="fixed" /></div>
+			<div class="input"><input id="authorEmail" type="text" name="{$email_name}" value="{$w_email|escape}" class="fixed" /></div>
 			<div class="label">URL:</div>
-			<div class="input"><input id="authorURL" type="text" name="url" value="{$w_url|default:"http://"|escape}" class="fixed" /></div>
+			<div class="input"><input id="authorURL" type="text" name="{$url_name}" value="{$w_url|default:"http://"|escape}" class="fixed" /></div>
 			<div class="label">Comment (<span class="red">*</span>):</div>
-			<div class="input"><textarea id="commentText" name="body" rows="7" cols="55" class="fixed"></textarea></div>
+			<div class="input"><textarea id="commentText" name="{$body_name}" rows="7" cols="55" class="fixed"></textarea></div>
 			<div class="label">&nbsp;</div>
 			<div class="input"><input type="submit" value="Post" class="button" /></div>
 		</form>

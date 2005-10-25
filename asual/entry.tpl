@@ -69,15 +69,19 @@
 	<form id="commentform" action="" method="post">
 		<p>
 			<input type="hidden" name="blogid" value="{$entry->entryId}" />
+			<input type="hidden" name="name_name" value="{$name_name}" />
+			<input type="hidden" name="email_name" value="{$email_name}" />
+			<input type="hidden" name="url_name" value="{$url_name}" />
+			<input type="hidden" name="body_name" value="{$body_name}" />
 		</p>
 		<p class="label">Author (<span class="red">*</span>):</p>
-		<p class="input"><input type="text" name="name" value="{$w_name|escape}" /></p>
+		<p class="input"><input type="text" name="{$name_name}" value="{$w_name|escape}" /></p>
 		<p class="label">E-mail:</p>
-		<p class="input"><input type="text" name="email" value="{$w_email|escape}" /></p>
+		<p class="input"><input type="text" name="{$email_name}" value="{$w_email|escape}" /></p>
 		<p class="label">URL:</p>
-		<p class="input"><input type="text" name="url" value="{$w_url|default:"http://"|escape}" /></p>
+		<p class="input"><input type="text" name="{$url_name}" value="{$w_url|default:"http://"|escape}" /></p>
 		<p class="label">Comment (<span class="red">*</span>):</p>
-		<p class="input"><textarea name="body" rows="5" cols="40"></textarea></p>
+		<p class="input"><textarea name="{$body_name}" rows="5" cols="40"></textarea></p>
 		<p class="label">&nbsp;</p>
 		<p class="input"><input type="submit" value="Post" /></p>
 	</form>

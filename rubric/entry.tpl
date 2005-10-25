@@ -80,21 +80,25 @@
 <form id="commentform" action="" method="post">
 	<p>
 		<input type="hidden" name="blogid" value="{$entry->entryId}" />
-		<input id="author" class="text" type="text" name="name" value="{$w_name|escape}" />
+		<input type="hidden" name="name_name" value="{$name_name}" />
+		<input type="hidden" name="email_name" value="{$email_name}" />
+		<input type="hidden" name="url_name" value="{$url_name}" />
+		<input type="hidden" name="body_name" value="{$body_name}" />
+		<input id="author" class="text" type="text" name="{$name_name}" value="{$w_name|escape}" />
 		<label for="author">Name</label>
 	</p>
 	<p>
-		<input id="email" class="text" type="text" name="email" value="{$w_email|escape}" />
+		<input id="email" class="text" type="text" name="{$email_name}" value="{$w_email|escape}" />
 		<label for="email">Email</label>
 	</p>
 	<p>
-		<input id="url" class="text" type="text" name="url" value="{$w_url|default:"http://"|escape}" />
+		<input id="url" class="text" type="text" name="{$url_name}" value="{$w_url|default:"http://"|escape}" />
 		<label for="email">URL</label>
 	</p>
 	<p>
 		<label>Your Comment</label>
 		<br />
-		<textarea name="body" rows="5" cols="40"></textarea>
+		<textarea name="{$body_name}" rows="5" cols="40"></textarea>
 	</p>
 	<p>
 		<input type="submit" value="Say it!" />
