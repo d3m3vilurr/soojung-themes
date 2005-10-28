@@ -1,6 +1,6 @@
 </div>
 
-<hr class="hide" />
+<hr class="div_hide" />
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 <!--+ sidebar +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
@@ -16,7 +16,7 @@
 
 {if #showStaticEntries# != -1 && count($static_entries) != 0}
 <h3><a href="#none" onclick="return fold_sidebar('div_static');">Static Entries</a></h3>
-<ul id="div_static"{if #showStaticEntries# == 0} class="hide"{/if}>
+<ul id="div_static"{if #showStaticEntries# == 0} class="div_hide"{/if}>
 {foreach from=$static_entries item=static}
 	<li><a href="{$static->getHref()|escape}">{$static->title|escape}</a></li>
 {foreachelse}
@@ -27,14 +27,14 @@
 
 {if #showCalendar# != -1}
 <h3><a href="#none" onclick="return fold_sidebar('div_calendar');">Calendar</a></h3>
-<div id="div_calendar"{if #showCalendar# == 0} class="hide"{/if}>
+<div id="div_calendar"{if #showCalendar# == 0} class="div_hide"{/if}>
 	{$calendar->getCalendar()}
 </div>
 {/if}
 
 {if #showCategories# != -1}
 <h3><a href="#none" onclick="return fold_sidebar('div_category');">Categories</a></h3>
-<ul id="div_category"{if #showCategories# == 0} class="hide"{/if}>
+<ul id="div_category"{if #showCategories# == 0} class="div_hide"{/if}>
 {foreach from=$categories item=category}
 	<li><a href="{$category->getHref()|escape}">{$category->name|escape}</a> ({$category->getEntryCount()})</li>
 {foreachelse}
@@ -45,7 +45,7 @@
 
 {if #showArchives# != -1}
 <h3><a href="#none" onclick="return fold_sidebar('div_archive');">Archives</a></h3>
-<ul id="div_archive"{if #showArchives# == 0} class="hide"{/if}>
+<ul id="div_archive"{if #showArchives# == 0} class="div_hide"{/if}>
 {foreach from=$archvies item=archive}
 	<li><a href="{$archive->getHref()|escape}">{$archive->getDate()|date_format:"%B %Y"}</a></li>
 {foreachelse}
@@ -56,7 +56,7 @@
 
 {if #showRecentEntries# != -1}
 <h3><a href="#none" onclick="return fold_sidebar('div_entry');">Recent Entries</a></h3>
-<ul id="div_entry"{if #showRecentEntries# == 0} class="hide"{/if}>
+<ul id="div_entry"{if #showRecentEntries# == 0} class="div_hide"{/if}>
 {foreach from=$recent_entries item=entry}
 	<li><a href="{$entry->getHref()|escape}">{$entry->title|escape}</a></li>
 {foreachelse}
@@ -67,7 +67,7 @@
 
 {if #showRecentComments# != -1 && count($recent_comments) != 0}
 <h3><a href="#none" onclick="return fold_sidebar('div_comment');">Recent Comments</a></h3>
-<ul id="div_comment"{if #showRecentComments# == 0} class="hide"{/if}>
+<ul id="div_comment"{if #showRecentComments# == 0} class="div_hide"{/if}>
 {foreach from=$recent_comments item=comment}
 	<li><a href="{$comment->getHref()|escape}">{$comment->getBody()|strip_tags:false|escape}</a></li>
 {/foreach}
@@ -76,7 +76,7 @@
 
 {if #showRecentTrackbacks# != -1 && count($recent_trackbacks) != 0}
 <h3><a href="#none" onclick="return fold_sidebar('div_trackback');">Recent TrackBacks</a></h3>
-<ul id="div_trackback"{if #showRecentTrackbacks# == 0} class="hide"{/if}>
+<ul id="div_trackback"{if #showRecentTrackbacks# == 0} class="div_hide"{/if}>
 {foreach from=$recent_trackbacks item=trackback}
 	<li><a href="{$trackback->getHref()|escape}">{$trackback->url|escape}</a></li>
 {/foreach}
@@ -85,7 +85,7 @@
 
 {if #showRecentReferers# != -1 && count($recent_referers) != 0}
 <h3><a href="#none" onclick="return fold_sidebar('div_referer');">Recent Referers</a></h3>
-<ul id="div_referer"{if #showRecentReferers# == 0} class="hide"{/if}>
+<ul id="div_referer"{if #showRecentReferers# == 0} class="div_hide"{/if}>
 {foreach from=$recent_referers item=referer}
 	<li><a href="{$referer}">{$referer}</a></li>
 {/foreach}
@@ -94,7 +94,7 @@
 
 {if #showBookmarks# != -1 && count($bookmarks) != 0}
 <h3><a href="#none" onclick="return fold_sidebar('div_bookmark');">Bookmarks</a></h3>
-<ul id="div_bookmark"{if #showBookmarks# == 0} class="hide"{/if}>
+<ul id="div_bookmark"{if #showBookmarks# == 0} class="div_hide"{/if}>
 {foreach from=$bookmarks item=bookmark}
 	<li><a href="{$bookmark->url|escape}">{$bookmark->name|escape}</a></li>
 {/foreach}
@@ -103,7 +103,7 @@
 
 {if #showSearchForm# != -1}
 <h3><a href="#none" onclick="return fold_sidebar('div_search');">Search</a></h3>
-<form action="{$baseurl}/index.php" method="get" id="div_search"{if #showSearchForm# == 0} class="hide"{/if}>
+<form action="{$baseurl}/index.php" method="get" id="div_search"{if #showSearchForm# == 0} class="div_hide"{/if}>
 	<p>
 	<input type="text" name="search" title="input search text" />
 	<input type="submit" value="go" />
@@ -122,7 +122,7 @@
 
 </div>
 
-<hr class="hide" />
+<hr class="div_hide" />
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 <!--+ footer ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->

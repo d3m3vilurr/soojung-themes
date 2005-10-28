@@ -2,7 +2,7 @@
 
 <div class="entry thisentry">
 <h2>
-	<span class="box_title">{$entry->title|escape}</span> <span class="hide">|</span>
+	<span class="box_title">{$entry->title|escape}</span> <span class="div_hide">|</span>
 	<span class="box_header">{$entry->category->name|escape} | {$entry->date|date_format:"%Y/%m/%d %p %I:%M"}</span>
 </h2>
 
@@ -16,7 +16,7 @@
 {foreach from=$trackbacks item=trackback}
 	<div class="trackback" id="TB{$trackback->date}">
 		<h3>
-			<a href="{$trackback->url|escape}" class="box_title">Trackback: {$trackback->url|escape}</a> <span class="hide">| trackbacked on</span>
+			<a href="{$trackback->url|escape}" class="box_title">Trackback: {$trackback->url|escape}</a> <span class="div_hide">| trackbacked on</span>
 			<span class="box_header">{$trackback->date|date_format:"%Y/%m/%d %p %I:%M"}</span>
 		</h3>
 		<div class="box_body">
@@ -39,7 +39,7 @@
 		{else}
 			<span class="box_title">Comment by {$comment->name|escape}</span>
 		{/if}
-			<span class="hide">| posted on</span>
+			<span class="div_hide">| posted on</span>
 			<span class="box_header">{$comment->date|date_format:"%Y/%m/%d %p %I:%M"}</span>
 		</h3>
 		<div class="box_body">
