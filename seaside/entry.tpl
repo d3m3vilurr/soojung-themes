@@ -42,7 +42,7 @@
 {/foreach}
 </ul>
 
-<form action="" method="post">
+<form action="{$baseurl}/entry.php" method="post">
 <input type="hidden" name="blogid" value="{$entry->entryId}" />
 <input type="hidden" name="name_name" value="{$name_name}" />
 <input type="hidden" name="email_name" value="{$email_name}" />

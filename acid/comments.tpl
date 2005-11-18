@@ -18,7 +18,7 @@
 </div>
 {/foreach}
 </div>
-<form action="entry.php?blogid={$entry->entryId}" method="post">
+<form action="{$baseurl}/entry.php?blogid={$entry->entryId}" method="post">
 <p>Post a comment</p>
 <p>Name:<br />
 <input type="text" name="{$name_name}" value="{$w_name|escape}" /></p>

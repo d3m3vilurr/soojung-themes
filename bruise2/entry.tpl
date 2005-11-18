@@ -45,7 +45,7 @@
 </div>
 </div>
 
-<form action="" method="post">
+<form action="{$baseurl}/entry.php" method="post">
 <div>
 Post a comment<br />
 Name:<br />

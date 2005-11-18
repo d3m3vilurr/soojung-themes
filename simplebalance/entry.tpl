@@ -49,7 +49,7 @@
 {/foreach}
 </div>
 
-<form action="" method="post" class="postform">
+<form action="{$baseurl}/entry.php" method="post" class="postform">
 	<h3>Post a comment</h3>
 	<div class="postform_leftside"><p>
 		<input type="hidden" name="blogid" value="{$entry->entryId}" />
