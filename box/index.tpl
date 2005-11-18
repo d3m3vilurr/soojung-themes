@@ -53,15 +53,19 @@
 				<br />
 				<form action="{$baseurl}/entry.php" method="post">
 					<div class="blue8" style="text-align:right; padding:0 0 3px 0;">
-    					Name <input class="comment_text" type="text" name="name" value="{$w_name|escape}" style="width: 50px;" /> &nbsp;
-						Email <input class="comment_text" type="text" name="email" value="{$w_email|escape}" style="width: 50px;" /> &nbsp;
-						Homepage <input class="comment_text" type="text" name="url" value="{$w_url|default:"http://"|escape}" style="width: 200px;" />
+    					Name <input class="comment_text" type="text" name="{$name_name}" value="{$w_name|escape}" style="width: 50px;" /> &nbsp;
+						Email <input class="comment_text" type="text" name="{$email_name}" value="{$w_email|escape}" style="width: 50px;" /> &nbsp;
+						Homepage <input class="comment_text" type="text" name="{$url_name}" value="{$w_url|default:"http://"|escape}" style="width: 200px;" />
 					</div>
 					<div style="text-align:right;">
-						<textarea class="comment_text" name="body" rows="3" cols="" style="width: 90%; overflow-y: auto; overflow-x: hidden;"></textarea>
+						<textarea class="comment_text" name="{$body_name}" rows="3" cols="" style="width: 90%; overflow-y: auto; overflow-x: hidden;"></textarea>
 					</div>
-	    			<div style="text-align: right; padding: 3px 0 0 0;" class="gray7">
+					<div style="text-align: right; padding: 3px 0 0 0;" class="gray7">
 						<input type="hidden" name="blogid" value="{$entry->entryId}" />
+						<input type="hidden" name="name_name" value="{$name_name}" />
+						<input type="hidden" name="email_name" value="{$email_name}" />
+						<input type="hidden" name="url_name" value="{$url_name}" />
+						<input type="hidden" name="body_name" value="{$body_name}" />
 						<input type="submit" value="save" style="color:#999999; background-color:#F7F7F7; border: 1px #CCCCCC solid; width: 50px; height: 17px; overflow: auto; font-size: 8pt;" />
 					</div>
 				</form>
