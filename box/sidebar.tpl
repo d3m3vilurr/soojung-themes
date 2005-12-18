@@ -14,7 +14,7 @@
 			<a href="{$category->getHref()|escape}">{$category->name|substring:25|escape}</a>
 			({$category->getEntryCount()})
 			{if #CategoryRss# != 0}
-			<a href="{$baseurl}/rss2.php?category={$category->name|escape}">
+			<a href="{$category->getRssHref()|escape}">
 				<img src="{$baseurl}/templates/{$skin}/imgs/xml.gif" alt="rss" />
 			</a>
 			{/if}
