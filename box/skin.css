@@ -46,6 +46,11 @@
         font-size: 9pt;
 }
 
+.entrybody img {
+        max-width: 531px;
+	width:expression(this.width > 531 ? "531px" : this.width);
+}
+
 .entrydate {
 	text-align: right;
 	margin-top: 20px;
